@@ -1,0 +1,34 @@
+.layout {
+    min-height: 100vh;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px;
+
+
+    background-image: url("/img/landing-bg.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-color: #0d0f13;;
+
+    .content {
+        max-width: 1024px;
+        width: 100%;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .main {
+        width: 100%;
+        flex: 1;
+    }
+
+    .footer {
+        width: 100%;
+        background-color: black;
+
+    }
+}

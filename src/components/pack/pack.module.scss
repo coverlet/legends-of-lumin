@@ -1,0 +1,91 @@
+.pack {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+    position: relative;
+    border-radius: 4px;
+
+    &::after {
+        box-shadow: none;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transition: box-shadow 0.2s ease-out;
+    }
+
+    .title {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        color: #f1f1f1dd;
+        text-shadow: 0px 2px 6px rgb(255, 255, 255, 0.5);
+        background-color: #00000066;
+        height: 40px;
+        padding-top: 8px;
+
+        opacity: 1;
+        transition: all 0.2s ease-out;
+    }
+
+    .openButton {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 60%;
+        cursor: pointer;
+        text-align: center;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0;
+        z-index: 22;
+        transform: scale(0.8);
+        transition: all 0.2s ease-out;
+    }
+
+    .imageContainer {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            margin-left: -5px;
+            transition: transform 0.2s ease-out;
+            transform: scale(1.1);
+        }
+    }
+
+    &:hover {
+        .title {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.14, 0.61, 0.3, 0.99);
+        }
+
+        .imageContainer {
+            img {
+                transition: transform 0.6s cubic-bezier(0.14, 0.61, 0.3, 0.99);
+                transform: scale(1);
+            }
+        }
+
+        &::after {
+            transition: box-shadow 0.6s cubic-bezier(0.14, 0.61, 0.3, 0.99);
+            box-shadow: 0px 0px 22px 4px rgb(46, 1, 59, .4) inset;
+        }
+
+        .openButton {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.3s cubic-bezier(0.14, 0.61, 0.3, 0.99);
+        }
+    }
+}
